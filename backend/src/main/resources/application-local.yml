@@ -1,0 +1,16 @@
+server:
+  port: 9001
+
+spring:
+  application:
+    name: common-backend
+  mvc:
+    throw-exception-if-no-handler-found: true
+  resources:
+    add-mappings: false
+  datasource:
+    url: jdbc:sqlserver://127.0.0.1:1434;Database=BrianSite
+    username: common
+    password: test1234
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    type: 'com.zaxxer.hikari.HikariDataSource'
