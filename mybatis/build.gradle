@@ -1,0 +1,42 @@
+plugins {
+    id 'java'
+}
+
+apply plugin: 'maven'
+
+archivesBaseName = 'dao-ext'
+
+group 'org.brian'
+version '0.0.1'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+compileJava.options.encoding = 'UTF-8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    runtime group: 'com.microsoft.sqlserver', name: 'mssql-jdbc', version: '8.4.1.jre8'
+    implementation 'org.mybatis.generator:mybatis-generator-core:1.3.7'
+    compile 'org.mybatis.dynamic-sql:mybatis-dynamic-sql:1.1.3'
+    compile 'org.mybatis:mybatis:3.4.6'
+    compile 'javax.annotation:javax.annotation-api:1.3.2'
+}
+
+jar {
+    exclude '**/generatorConfig.xml'
+    exclude '**/application.properties'
+    exclude '**/plugin/'
+    exclude '**/MyBatisAutoGenerator.class'
+    exclude '**/MyBatisUtil.class'
+    exclude '**/mybatis-config.xml'
+}
+
+clean.doLast {
+    file('D:/Git/Brian/mybatis/src/main/java/org/brian/dao/ext/entity').deleteDir()
+    file('D:/Git/Brian/mybatis/src/main/java/org/brian/dao/ext/mapper').deleteDir()
+    file('D:/Git/Brian/mybatis/src/main/resources/sqlmap/').deleteDir()
+}
