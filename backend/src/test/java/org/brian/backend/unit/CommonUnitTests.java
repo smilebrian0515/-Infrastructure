@@ -3,12 +3,9 @@ package org.brian.backend.unit;
 import org.assertj.core.api.SoftAssertions;
 import org.brian.backend.exception.ExceptionLogger;
 import org.brian.backend.exception.ModuleException;
-import org.brian.dao.ext.entity.Guestbook;
-import org.brian.dao.ext.mapper.GuestbookMapper;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.File;
 import java.io.IOException;
@@ -16,7 +13,6 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Date;
 import java.util.HashMap;
 
 import static org.assertj.core.api.Assertions.assertThat;
